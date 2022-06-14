@@ -1,0 +1,26 @@
+Services :- user should be able to register for an account, sign-in, sign-out & request account deletion.
+
+
+Implementation phase 1 :
+user should be able to register for an account.
+user should be able to sign-in & sign-out.
+
+##
+phase 2
+user should be able to request account deletion with authentication.
+followup, provide user forgot password, with hint.
+
+phase 3
+user should be able to update meta data.
+
+
+User be able ot login, 
+create password, username.
+should persist the changes,
+there should be some meta data, anything like ohone number etc
+
+
+
+
+
+followup: forgetpassword by hint
