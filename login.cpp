@@ -5,6 +5,7 @@ class user_t
 {
 public:
     user_t(std::string, std::string);
+    std::string getUserName();
 };
 /*
     forward declaration above
@@ -112,7 +113,5 @@ bool userRegistration_t::logout()
 
 bool userRegistration_t::writeToDisk(user_t newUser)
 {
-    std::ofstream file_writer;
-
-
+    // std::ofstream file_writer(newUser.getUserName() + ".txt");
 }

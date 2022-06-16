@@ -8,7 +8,7 @@ user.o: user.cpp
 	g++ -c user.cpp -o user.o
 
 all: login.o user.o main.o
-	g++ user.o login.o main.o -o myExecutable
+	g++ user.o login.o main.o -o myExecutable -g
 
 clean: 
 	rm -f *.o
