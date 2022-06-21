@@ -1,12 +1,17 @@
 Services :- user should be able to register for an account, sign-in, sign-out & request account deletion.
 
 
+Account : - name(string), password(string)
+
 Implementation phase 1 :
 user should be able to register for an account.
 user should be able to sign-in & sign-out.
 
 ##
-phase 2
+phase 2:
+
+phase-1-IMPOROVEMENTS: same username should not be allowed
+
 user should be able to request account deletion with authentication.
 followup, provide user forgot password, with hint.
 

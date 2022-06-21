@@ -5,9 +5,6 @@
 
 class userRegistration_t
 {
-private:
-    bool writeToDisk(user_t newUser);
-
 public:
     void interface();
     bool registerNewUserAccount();
