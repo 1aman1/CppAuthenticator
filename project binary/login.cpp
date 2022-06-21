@@ -85,17 +85,40 @@ bool userRegistration_t::registerNewUserAccount()
 
 bool userRegistration_t::login()
 {
-    std::cerr << "under maintenance\n";
-    return false;
-
+    // std::cerr << "under maintenance\n";
+    // return false;
     std::string username;
+    std::string password;
+
+    std::cout << "your username ? : ";
     std::cin >> username;
 
-    // try loading the file, if same username exists, return
-    // else
-    // {
-    //     // match password
-    // }
+    std::fstream ifs;
+    std::string filename = "userDataStore/" + username + ".utext";
+
+    ifs.open(filename);
+
+    if (ifs.is_open())
+    {
+        std::cout << "Password !!\n";
+        std::cin >> password;
+
+        // verify password
+        std::string textFromFile;
+        ifs >> textFromFile;
+        // std::cout << "textFromFile " << textFromFile << "PWD " << password << std::endl;
+
+        if (textFromFile == password)
+            std::cout << "Logged in\n";
+        else
+            std::cout << "Unable to login, check password\n";
+    }
+
+    else
+    {
+        std::cerr << "user not found\n";
+        return false;
+    }
 }
 
 bool userRegistration_t::logout()
@@ -132,7 +155,7 @@ void userRegistration_t::interface()
         case 2:
         {
             if (login())
-                std::cout << "Logged In\n";
+                std::cout << "\n";
             else
                 std::cerr << "Login failed!\n";
         }
