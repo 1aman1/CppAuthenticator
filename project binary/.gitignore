@@ -1,2 +1,3 @@
 *.o
 userDataStore/*
+local_requirements.txt
