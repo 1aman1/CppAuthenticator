@@ -1,19 +1,22 @@
 main.o: main.cpp
 	g++ -c main.cpp -o main.o
 
-login.o: login.cpp
-	g++ -c login.cpp -o login.o
+iam.o: iam.cpp
+	g++ -c iam.cpp -o iam.o
 
-user.o: user.cpp
-	g++ -c user.cpp -o user.o
+user_attr.o: user_attr.cpp
+	g++ -c user_attr.cpp -o user_attr.o
+
+obj_attr.o: obj_attr.cpp
+	g++ -c obj_attr.cpp -o obj_attr.o
 
 persistance_manager.o: persistance_manager.cpp
 	g++ -c persistance_manager.cpp -o persistance_manager.o
 
-all: login.o user.o persistance_manager.o main.o
-	g++ user.o login.o persistance_manager.o main.o -o myExecutable -g
+all: persistance_manager.o obj_attr.o user_attr.o iam.o main.o
+	g++ user_attr.o obj_attr.o persistance_manager.o iam.o main.o -o myExecutable -g
 
 clean: 
 	rm -f *.o
-	rm -f userDataStore/*.utext
+	rm -f userDataStore/*.*
 	rm -f myExecutable

@@ -1,5 +1,6 @@
-#include "user.h"
-#include "login.h"
+#include "user_attr.h"
+#include "iam.h"
+#include "persistance_manager.h"
 
 /*
     part of a user account registration 3 phase project
@@ -7,7 +8,7 @@
 
 int main()
 {
-    userRegistration_t obj;
+    auth_t obj;
     obj.interface();
 
     return 0;

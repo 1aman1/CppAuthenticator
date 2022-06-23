@@ -1,16 +1,8 @@
-#include <string>
+#include "user_attr.h"
 
-class user_t
-{
-public:
-    std::string username;
-    std::string password;
+/*
 
-    user_t(std::string un, std::string pwd);
-
-    std::string getUserName();
-    std::string getPassword();
-};
+*/
 
 user_t::user_t(std::string un, std::string pwd)
 {

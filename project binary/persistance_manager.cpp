@@ -1,52 +1,36 @@
+#include "persistance_manager.h"
+#include "iam.h"
+#include "user_attr.h"
+#include "obj_attr.h"
+
 #include <iostream>
 #include <fstream>
 
-class user_t
-{
-public:
-    std::string username;
-    std::string password;
-
-    user_t(std::string, std::string);
-
-    std::string getUserName();
-    std::string getPassword();
-};
-
 /*
-forward declaration above
+
 */
-
-class PersistanceManager_t
-{
-public:
-    static bool save(const user_t &userObj, std::string filename);
-};
-
-bool PersistanceManager_t::save(const user_t &userObj, std::string filename = "filename.txt")
+bool PersistanceManager_t::save(const user_t &userObj, std::string username)
 {
     std::ofstream ofs;
 
-    // add folder path
-    filename = "userDataStore/" + filename;
+    // get absolute object path
+    std::string fileObj = objAttribute_t::getAbsFile(username);
 
-    ofs.open(filename);
-    if (ofs.is_open())
-    {
-        ofs << userObj.username << std::endl;
-        ofs << userObj.password << std::endl;
+    ofs.open(fileObj);
 
-        // std::cout << "file saved \n";
-        ofs.close();
-    }
-    else
+    if (!ofs.is_open())
     {
         std::cout << "could not open file for writing\n";
     }
+    else
+    {
+        ofs << userObj.password << std::endl;
+        ofs.close();
+    }
 
-    // check if (filename) is present, then successful
-    std::ifstream file(filename);
-    if (!file)
+    // verify if (fileObj) is present
+    std::ifstream ifs(fileObj);
+    if (!ifs)
     {
         std::cerr << "could not verify created user obj file\n";
         return false;

@@ -1,5 +1,5 @@
-#ifndef user_h
-#define user_h
+#ifndef user_attr_h
+#define user_attr_h
 
 #include <string>
 
