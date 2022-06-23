@@ -32,7 +32,7 @@ bool auth_t::registerNew()
     std::string username, password, confirmpassword;
     bool matchPass = true;
 
-    std::cout << "username(case-insensitive)\n";
+    std::cout << "$ username(case-insensitive) \n > ";
     std::cin >> username;
 
     /*
@@ -49,14 +49,14 @@ bool auth_t::registerNew()
 
     while (matchPass)
     {
-        std::cout << "password(alphanumeric ONLY)\n";
+        std::cout << "$ password(alphanumeric ONLY)\n> ";
         std::cin >> password;
-        std::cout << "confirm password\n";
+        std::cout << "$ confirm password\n> ";
         std::cin >> confirmpassword;
 
         if (password == confirmpassword)
         {
-            std::cout << "re-enter password\n";
+            std::cout << "$ re-enter password\n> ";
             matchPass = false;
         }
     }
@@ -75,18 +75,18 @@ bool auth_t::loginUser()
     std::string username;
     std::string password;
 
-    std::cout << "your username ? : ";
+    std::cout << "$ your username ? > ";
     std::cin >> username;
 
     if (!ifUserExists(username))
     {
-        std::cerr << " ID: " << username << "not found";
+        std::cerr << "$ ID: " << username << "not found";
         return false;
     }
 
     else
     {
-        std::cout << "We found your profile, input your password !!\n";
+        std::cout << "$ We found your profile, input your password !!\n> ";
         std::cin >> password;
 
         std::fstream ifso;
@@ -99,11 +99,11 @@ bool auth_t::loginUser()
 
         if (textFromFile != password)
         {
-            std::cout << "Unable to loginUser, check password\n";
+            std::cout << "$ Unable to loginUser, re-enter password\n> ";
             return false;
         }
 
-        std::cout << "Logged in\n";
+        std::cout << "$ Logged in\n> ";
         return true;
     }
 }
