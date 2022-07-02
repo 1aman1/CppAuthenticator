@@ -112,6 +112,11 @@ bool auth_t::logoutUser()
 {
     std::cerr << "under maintenance\n";
     return false;
+    /**
+     * must be available only after login
+     * implement basic first
+     * then will update requirements in proj file w r t time available
+     */
 }
 
 void auth_t::interface()
