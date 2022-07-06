@@ -59,7 +59,7 @@
     </details>
     <details>
         <summary>
-                Phase 7
+                :pushpin: Phase 7
         </summary>
         <p>
             - Profile should include metadata<br />
