@@ -1,0 +1,4 @@
+*.o
+userDataStore/*
+local_requirements.txt
+myExecutable.exe
